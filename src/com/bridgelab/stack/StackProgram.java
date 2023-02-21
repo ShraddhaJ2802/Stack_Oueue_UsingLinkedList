@@ -76,4 +76,16 @@ public class StackProgram {
         }
     }
 
+    public void pop() // remove at the beginning
+    {
+        // check for stack underflow
+        if (top == null) {
+            System.out.print("\nStack Underflow");
+            return;
+        }
+
+        // update the top pointer to point to the next node
+        top = (top).link;
+    }
+
 }

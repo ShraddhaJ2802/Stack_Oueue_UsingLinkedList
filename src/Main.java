@@ -20,5 +20,13 @@ public class Main {
         // print Top element of Stack
         System.out.printf("\nTop element is %d\n",
                 stack.peek());
+
+        // Delete top element of Stack
+        stack.pop();
+
+        stack.pop();
+
+        // print Stack elements
+        stack.display();
     }
 }
