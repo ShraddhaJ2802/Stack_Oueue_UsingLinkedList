@@ -1,6 +1,6 @@
 package com.bridgelab.stack;
 
-public class QueueProgram {
+class QueueProgram {
 
     int key;
     QueueProgram next;
@@ -11,7 +11,7 @@ public class QueueProgram {
     }
 }
 
-class Queue {
+ class Queue {
     QueueProgram front, rear;
 
     public Queue() {
@@ -54,6 +54,8 @@ class Queue {
         if (this.front == null)
             this.rear = null;
     }
+
+    
 }
 
 
