@@ -12,51 +12,66 @@ class QueueProgram {
 }
 
  class Queue {
-    QueueProgram front, rear;
+     QueueProgram front, rear;
 
-    public Queue() {
+     public Queue() {
 
-        this.front = this.rear = null;
-    }
+         this.front = this.rear = null;
+     }
 
 
-    void enqueue(int key) {
+     void enqueue(int key) {
 
-        // Create a new LL node
-        QueueProgram temp = new QueueProgram(key);
+         // Create a new LL node
+         QueueProgram temp = new QueueProgram(key);
 
-        // If queue is empty, then new node is front and
-        // rear both
-        if (this.rear == null) {
-            this.front = this.rear = temp;
-            return;
-        }
+         // If queue is empty, then new node is front and
+         // rear both
+         if (this.rear == null) {
+             this.front = this.rear = temp;
+             return;
+         }
 
-        // Add the new node at the end of queue and change
-        // rear
-        this.rear.next = temp;
-        this.rear = temp;
-    }
+         // Add the new node at the end of queue and change
+         // rear
+         this.rear.next = temp;
+         this.rear = temp;
+     }
 
-    void dequeue()
-    {
-        // If queue is empty, return NULL.
-        if (this.front == null)
-            return;
+     void dequeue() {
+         // If queue is empty, return NULL.
+         if (this.front == null)
+             return;
 
-        // Store previous front and move front one node
-        // ahead
-        QueueProgram temp = this.front;
-        this.front = this.front.next;
+         // Store previous front and move front one node
+         // ahead
+         QueueProgram temp = this.front;
+         this.front = this.front.next;
 
-        // If front becomes NULL, then change rear also as
-        // NULL
-        if (this.front == null)
-            this.rear = null;
-    }
+         // If front becomes NULL, then change rear also as
+         // NULL
+         if (this.front == null)
+             this.rear = null;
+     }
+ }
 
-    
-}
+     public class Test {
+         public static void main(String[] args)
+         {
+             Queue q = new Queue();
+             q.enqueue(10);
+             q.enqueue(20);
+             q.dequeue();
+             q.dequeue();
+             q.enqueue(30);
+             q.enqueue(40);
+             q.enqueue(50);
+             q.dequeue();
+             System.out.println("Queue Front : " + ((q.front != null) ? (q.front).key : -1));
+             System.out.println("Queue Rear : " + ((q.rear != null) ? (q.rear).key : -1));
+         }
+     }
+
 
 
 
